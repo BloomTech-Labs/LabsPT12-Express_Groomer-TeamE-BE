@@ -11,7 +11,6 @@ exports.up = (knex) => {
       table.string('address');
       table.string('clientFavorites');
       table.timestamps(true, true);
-
     });
 };
 

@@ -12,7 +12,7 @@ exports.up = (knex) => {
       table.string('clientFavorites');
       table.timestamps(true, true);
 
-    })
+    });
 };
 
 exports.down = (knex) => {

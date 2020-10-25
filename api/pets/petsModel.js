@@ -4,12 +4,8 @@ const findAll = async () => {
   return await db('pets');
 }
 
-const findBy = (filter) => {
-  return db('pets').where({ filter });
-}
-
-const findByUserId = async (user_id) => {
-  return db('pets').where({ user_id }).select('*');
+const findById = (id) => {
+  return db('pets').where({ id });
 }
 
 const addPet = async (pet) => {
@@ -19,7 +15,6 @@ const addPet = async (pet) => {
 const update = (id, pet) => {
   return db('pets')
     .where({ id: id })
-    .first()
     .update(pet)
     .returning('*');
 }
@@ -30,8 +25,7 @@ const remove = async (id) => {
 
 module.exports = {
   findAll,
-  findBy,
-  findByUserId,
+  findById,
   addPet,
   update,
   remove

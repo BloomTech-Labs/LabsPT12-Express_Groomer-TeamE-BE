@@ -42,9 +42,9 @@ const findOrCreateProfile = async (profileObj) => {
 
 //Pets model functions
 const findPetsByUserId = async (id) => {
-  const pets = db('pets').where('pets.user_id', id)
-  return pets
-}
+  const pets = db('pets').where('pets.user_id', id);
+  return pets;
+};
 
 module.exports = {
   findAll,
@@ -54,5 +54,5 @@ module.exports = {
   update,
   remove,
   findOrCreateProfile,
-  findPetsByUserId
+  findPetsByUserId,
 };

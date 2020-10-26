@@ -3,6 +3,21 @@ const authRequired = require('../middleware/authRequired');
 const Profiles = require('./profileModel');
 const router = express.Router();
 
+//Get pets by user_id
+router.get('/:id/pets', authRequired, async (req, res) => {
+  try {
+    const pets = await Profiles.findPetsByUserId(req.params.id);
+
+    if (!pets) {
+      res.status(404).json({ message: "Couldn't find pets by that user ID" });
+    }
+
+    res.status(200).json(pets);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 /**
  * @swagger
  * components:

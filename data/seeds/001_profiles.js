@@ -1,6 +1,6 @@
 const faker = require('faker');
 
-const roles = ['groomer', 'user'];
+const roles = ['groomer', 'client'];
 
 const profiles = [...new Array(5)].map((i, idx) => ({
   id: idx === 0 ? '00ulthapbErVUwVJy4x6' : faker.random.alphaNumeric(20),
@@ -11,7 +11,7 @@ const profiles = [...new Array(5)].map((i, idx) => ({
       ? 'Test001 User'
       : `${faker.name.firstName()} ${faker.name.lastName()}`,
   role:
-    idx === 0 ? 'user' : `${roles[Math.floor(Math.random() * roles.length)]}`,
+    idx === 0 ? 'client' : `${roles[Math.floor(Math.random() * roles.length)]}`,
   bannerUrl: faker.image.city(),
   address: faker.address.streetAddress(),
 }));

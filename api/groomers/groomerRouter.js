@@ -8,13 +8,12 @@ router.get('/', authRequired, async (req, res) => {
   try {
     const groomers = await Profiles.findGroomers();
 
-    res.status(200).json(groomers)
-
+    res.status(200).json(groomers);
   } catch (err) {
     res.status(500).json({
-      message: `Could not find groomers`
+      message: `Could not find groomers`,
     });
   }
-})
+});
 
 module.exports = router;

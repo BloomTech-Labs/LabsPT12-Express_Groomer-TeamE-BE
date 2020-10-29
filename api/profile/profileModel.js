@@ -41,7 +41,7 @@ const findOrCreateProfile = async (profileObj) => {
 
 const findGroomers = async () => {
   return db('profiles').where({ role: 'groomer' });
-}
+};
 
 //Pets model functions
 const findPetsByUserId = async (id) => {
@@ -58,5 +58,5 @@ module.exports = {
   remove,
   findOrCreateProfile,
   findPetsByUserId,
-  findGroomers
+  findGroomers,
 };

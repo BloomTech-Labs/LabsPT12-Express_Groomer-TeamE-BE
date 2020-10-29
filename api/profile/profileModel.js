@@ -17,7 +17,6 @@ const create = async (profile) => {
 };
 
 const update = (id, profile) => {
-  console.log(profile);
   return db('profiles')
     .where({ id: id })
     .first()
@@ -40,6 +39,10 @@ const findOrCreateProfile = async (profileObj) => {
   }
 };
 
+const findGroomers = async () => {
+  return db('profiles').where({ role: 'groomer' });
+}
+
 //Pets model functions
 const findPetsByUserId = async (id) => {
   const pets = db('pets').where('pets.user_id', id);
@@ -55,4 +58,5 @@ module.exports = {
   remove,
   findOrCreateProfile,
   findPetsByUserId,
+  findGroomers
 };

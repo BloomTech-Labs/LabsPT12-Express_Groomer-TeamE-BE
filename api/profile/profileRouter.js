@@ -23,14 +23,16 @@ router.get('/:id/businesses', authRequired, async (req, res) => {
   try {
     const business = await Profiles.findBusinessById(req.params.id);
 
-    if(!business) {
-      res.status(404).json({ message: "Could not find business by that user ID" });
+    if (!business) {
+      res
+        .status(404)
+        .json({ message: 'Could not find business by that user ID' });
     }
     res.status(200).json(business);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
-})
+});
 
 /**
  * @swagger

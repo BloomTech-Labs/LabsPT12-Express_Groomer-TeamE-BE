@@ -53,7 +53,7 @@ const findPetsByUserId = async (id) => {
 const findBusinessById = async (id) => {
   const business = db('businesses').where('businesses.user_id', id);
   return business;
-}
+};
 
 module.exports = {
   findAll,
@@ -65,5 +65,5 @@ module.exports = {
   findOrCreateProfile,
   findPetsByUserId,
   findGroomers,
-  findBusinessById
+  findBusinessById,
 };

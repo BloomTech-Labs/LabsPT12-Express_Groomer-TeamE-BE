@@ -49,6 +49,12 @@ const findPetsByUserId = async (id) => {
   return pets;
 };
 
+//Businesses model functions
+const findBusinessById = async (id) => {
+  const business = db('businesses').where('businesses.user_id', id);
+  return business;
+};
+
 module.exports = {
   findAll,
   findBy,
@@ -59,4 +65,5 @@ module.exports = {
   findOrCreateProfile,
   findPetsByUserId,
   findGroomers,
+  findBusinessById,
 };

@@ -14,7 +14,6 @@ exports.up = async (knex) => {
     table.string('description');
     table.string('phone');
     table.string('availability');
-
   });
 };
 

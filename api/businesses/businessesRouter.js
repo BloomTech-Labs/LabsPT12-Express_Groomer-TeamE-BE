@@ -19,8 +19,6 @@ router.get('/', authRequired, async (req, res) => {
 
 //Get business by business ID
 router.get('/:id', authRequired, async (req, res) => {
-  console.log(typeof req.params.id)
-  console.log(req.params.id)
   try {
     const business = await Business.findById(req.params.id);
 

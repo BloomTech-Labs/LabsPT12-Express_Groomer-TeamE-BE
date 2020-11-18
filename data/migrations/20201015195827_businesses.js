@@ -7,13 +7,13 @@ exports.up = async (knex) => {
       .inTable('profiles')
       .onUpdate('CASCADE')
       .onDelete('CASCADE');
-    table.string('email').notNull().unique();
-    table.string('password').notNull();
-    table.string('name').notNull();
-    table.string('profile_photo');
+    table.string('name');
     table.string('banner_photo');
     table.string('address');
-    table.string('favorites');
+    table.string('ratings');
+    table.string('description');
+    table.string('phone');
+    table.string('availability');
   });
 };
 

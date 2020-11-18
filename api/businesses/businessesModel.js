@@ -5,7 +5,7 @@ const findAll = () => {
 };
 
 const findById = (id) => {
-  return db('businesses').where({ id }).first();
+  return db('businesses').where('user_id', id).first();
 };
 
 const addBusiness = async (business) => {
@@ -13,7 +13,7 @@ const addBusiness = async (business) => {
 };
 
 const update = (id, business) => {
-  return db('businesses').where({ id }).update(business).returning('*');
+  return db('businesses').where('user_id', id).update(business).returning('*');
 };
 
 const remove = async (id) => {
